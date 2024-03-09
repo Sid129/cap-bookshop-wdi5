@@ -12,7 +12,6 @@ exports.config = {
             browserName: "chrome",
             "goog:chromeOptions": {
                 args:
-                    // ["--no-sandbox", "--disable-dev-shm-usage"]
                     process.argv.indexOf("--headless") > -1
                         ? ["--headless"]
                         : process.argv.indexOf("--debug") > -1

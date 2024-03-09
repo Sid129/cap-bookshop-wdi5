@@ -32,6 +32,7 @@
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
         "chai-subset": "^1.6.0",
+        "chromedriver": "^122.0.4",
         "semver": "^7",
         "wdio-timeline-reporter": "^5.1.4",
         "wdio-ui5-service": "^2.0.6"
