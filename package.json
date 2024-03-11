@@ -32,8 +32,8 @@
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
         "chai-subset": "^1.6.0",
-        "chromedriver": "^122.0.4",
         "semver": "^7",
+        "wdio-chromedriver-service": "^8.1.1",
         "wdio-timeline-reporter": "^5.1.4",
         "wdio-ui5-service": "^2.0.6"
     },
@@ -44,7 +44,7 @@
         "undeploy": "cf undeploy capire-bookshop --delete-services --delete-service-keys --delete-service-brokers",
         "build": "rimraf resources && mbt build -t gen --mtar mta.tar",
         "deploy": "cf deploy gen/mta.tar -f",
-        "wdi5": "wdio run ./app/admin-books/webapp/test/wdi5/wdio.conf.js"
+        "wdi5": "wdio app/admin-books/webapp/test/wdi5/wdio.conf.js"
     },
     "engines": {
         "node": "^18"
