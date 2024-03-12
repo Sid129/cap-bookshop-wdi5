@@ -1,6 +1,6 @@
 const { TimelineService } = require("wdio-timeline-reporter/timeline-service")
 exports.config = {
-    specs: ["./**/specs/**.js"],
+    specs: ["./specs/**.js"],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -9,7 +9,7 @@ exports.config = {
     capabilities: [
         {
             maxInstances: 5,
-            browserName: "chromium",
+            browserName: "chrome",
             "goog:chromeOptions": {
                 args:
                     process.argv.indexOf("--headless") > -1
