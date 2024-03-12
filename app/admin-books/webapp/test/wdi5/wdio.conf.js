@@ -9,7 +9,7 @@ exports.config = {
     capabilities: [
         {
             maxInstances: 5,
-            browserName: "chrome",
+            browserName: "chromium",
             "goog:chromeOptions": {
                 args:
                     process.argv.indexOf("--headless") > -1
