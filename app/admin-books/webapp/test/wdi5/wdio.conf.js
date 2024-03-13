@@ -1,5 +1,18 @@
 const { TimelineService } = require("wdio-timeline-reporter/timeline-service")
 exports.config = {
+    // ====================
+    // wdi5 Configuration
+    // ====================
+    //
+    wdi5: {
+        screenshotPath: require("path").join("some", "dir", "for", "screenshots"), // [optional] {string}, default: ""
+        screenshotsDisabled: false, // [optional] {boolean}, default: false; if set to true, screenshots won't be taken and not written to file system
+        logLevel: "error", // [optional] error | verbose | silent, default: "error"
+        skipInjectUI5OnStart: false, // [optional] {boolean}, default: false; true when UI5 is not on the start page, you need to later call <wdioUI5service>.injectUI5() manually
+        waitForUI5Timeout: 60000, // [optional] {number}, default: 15000; maximum waiting time in milliseconds while checking for UI5 availability
+        btpWorkZoneEnablement: false // [optional] {boolean}, default: false; whether to instruct wdi5 to inject itself in both the SAP Build Workzone, standard edition, shell and app
+    },
+    
     specs: ["./specs/**.js"],
     // Patterns to exclude.
     exclude: [
