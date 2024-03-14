@@ -44,7 +44,7 @@
         "undeploy": "cf undeploy capire-bookshop --delete-services --delete-service-keys --delete-service-brokers",
         "build": "rimraf resources && mbt build -t gen --mtar mta.tar",
         "deploy": "cf deploy gen/mta.tar -f",
-        "wdi5": "wdio ./app/admin-books/webapp/test/wdi5/wdio.conf.js --headless",
+        "wdi5": "wdio ./app/admin-books/webapp/test/wdi5/wdio.conf.js",
         "wdi5-ci": "wdio ./app/admin-books/webapp/test/wdi5/wdio.conf.js --headless"
     },
     "engines": {
