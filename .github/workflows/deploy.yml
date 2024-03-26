@@ -51,16 +51,17 @@ jobs:
            command: deploy ./capire.bookshop_1.0.0.mtar -f
 
   Tests:
+     needs: deploy
      runs-on: ubuntu-latest
      steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Use Node.js
-          uses: actions/setup-node@v1
+          uses: actions/setup-node@v3
           with:
               node-version: 18
         - name: install wdi5
           run: |
-            npm install wdi5
+            npm install
         - name: run wdi5 tests
           run: npm run wdi5
      
