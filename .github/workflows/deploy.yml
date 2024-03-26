@@ -48,4 +48,4 @@ jobs:
            cf_password: ${{ secrets.CF_PASSWORD }}
            cf_org: ${{ secrets.CF_ORG }}
            cf_space: ${{ secrets.CF_SPACE }}
-           command: deploy ./test-btp_1.0.0.mtar -f
+           command: deploy ./capire.bookshop_1.0.0.mtar -f
