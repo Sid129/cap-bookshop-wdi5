@@ -69,7 +69,7 @@ jobs:
           # Uncomment to disable copy-paste and spell checks
           # DISABLE: COPYPASTE,SPELL
   sonarqube:
-    name: SonarQube Trigger
+    name: SonarQube
     runs-on: ubuntu-latest
     steps:
     - name: Checking out
@@ -82,3 +82,21 @@ jobs:
       env:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  # Check the Quality Gate status.
+    - name: SonarQube Quality Gate check
+      id: sonarqube-quality-gate-check
+      uses: sonarsource/sonarqube-quality-gate-action@master
+      # Force to fail step after specific time.
+      timeout-minutes: 5
+      env:
+       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+       SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} #OPTIONAL
+
+    - name: SonarQube Pull Request Comment
+      if: always()
+      uses: campos-pay/sonarqube-pr-comment@main
+      with:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        SONAR_PROJECTKEY: cap-bookshop-wdi5
+        GITHUB-TOKEN: ${{ secrets.GITHUB_TOKEN }}
