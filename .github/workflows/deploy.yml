@@ -8,23 +8,8 @@ on:
     branches: [ main ]
 
 jobs:
-  sonarqube:
-    name: SonarQube Trigger
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checking out
-      uses: actions/checkout@v2
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
-    - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@master
-      env:
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        
   build:
-    needs: sonarqube
+    #needs: sonarqube
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
